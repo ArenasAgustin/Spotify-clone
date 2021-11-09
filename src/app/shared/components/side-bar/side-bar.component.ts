@@ -45,11 +45,13 @@ export class SideBarComponent implements OnInit {
           icon: 'uil uil-estate',
           router: ['/', 'auth']
         },
+        
         {
           name: 'Buscar',
           icon: 'uil uil-search',
           router: ['/', 'history']
         },
+
         {
           name: 'Tu biblioteca',
           icon: 'uil uil-chart',
@@ -63,6 +65,7 @@ export class SideBarComponent implements OnInit {
           name: 'Crear lista',
           icon: 'uil-plus-square'
         },
+
         {
           name: 'Canciones que te gustan',
           icon: 'uil-heart-medical'
@@ -75,14 +78,17 @@ export class SideBarComponent implements OnInit {
         name: 'Mi lista º1',
         router: ['/']
       },
+
       {
         name: 'Mi lista º2',
         router: ['/']
       },
+
       {
         name: 'Mi lista º3',
         router: ['/']
       },
+
       {
         name: 'Mi lista º4',
         router: ['/']
