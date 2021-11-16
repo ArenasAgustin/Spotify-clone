@@ -9,12 +9,22 @@ import * as dataRaw from '../../../data/tracks.json'
 })
 export class PlayListBodyComponent implements OnInit {
   trackList: TrackModel[] = []
+  optionSort: { property: string | null, order: string } = { property: null, order: 'asc' }
 
   constructor() { }
 
   ngOnInit(): void {
-    const {data} = ( dataRaw as any ).default;
+    const { data } = (dataRaw as any).default;
     this.trackList = data;
   }
 
+  changeOrder(property: string | null): void {
+    const { order } = this.optionSort;
+    this.optionSort = {
+      property,
+      order: order === 'asc' ? 'desc' : 'asc'
+    };
+
+    console.log(this.optionSort);
+  }
 }
