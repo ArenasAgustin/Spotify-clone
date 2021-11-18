@@ -8,13 +8,12 @@ import * as dataRaw from '../../../../data/tracks.json'
   styleUrls: ['./tracks-page.component.css']
 })
 export class TracksPageComponent implements OnInit {
-  mockTrackList: TrackModel[] = []
+  tracksRandom: TrackModel[] = []
+  tracksTrending: TrackModel[] = []
 
   constructor() { }
 
   ngOnInit(): void {
-    const {data} = ( dataRaw as any ).default;
-    this.mockTrackList = data;
   }
 
 }
