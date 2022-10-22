@@ -49,7 +49,7 @@
         <a class="link" href="">¿Se te ha olvidado la contraseña?</a>
       </div>
 
-      <div>Ocurrio un error con tu email o password</div>
+      <div *ngIf="errorSession" class="form-error">Ocurrio un error con tu email o password</div>
 
       <div class="form-action">
         <button [disabled]="formLogin.invalid" class="login social-btn">

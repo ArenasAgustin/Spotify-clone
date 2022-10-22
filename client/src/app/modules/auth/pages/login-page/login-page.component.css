@@ -94,6 +94,12 @@
   text-decoration: underline;
 }
 
+.login-auth-page .login-auth-form .form-error {
+  color: red;
+  font-size: 85%;
+  font-weight: 500;
+}
+
 .login-auth-page .login-auth-form .form-steps .link:hover {
   color: var(--color-1);
 }
