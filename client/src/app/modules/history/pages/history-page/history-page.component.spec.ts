@@ -8,9 +8,8 @@ describe('HistoryPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HistoryPageComponent ]
-    })
-    .compileComponents();
+      declarations: [HistoryPageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

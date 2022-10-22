@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: '',
     component: TracksPageComponent,
-    outlet: 'home'
-  }
+    outlet: 'home',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class TracksRoutingModule { }
+export class TracksRoutingModule {}

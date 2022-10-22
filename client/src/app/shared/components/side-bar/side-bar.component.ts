@@ -7,7 +7,7 @@ interface defaultOptions {
   router: string[];
   query?: {
     hola: string;
-  }
+  };
 }
 
 interface accessLink {
@@ -16,8 +16,8 @@ interface accessLink {
 }
 
 interface mainMenuInterface {
-  defaultOptions?: defaultOptions[],
-  accessLink?: accessLink[],
+  defaultOptions?: defaultOptions[];
+  accessLink?: accessLink[];
 }
 
 interface customOptionsInterface {
@@ -28,14 +28,13 @@ interface customOptionsInterface {
 @Component({
   selector: 'app-side-bar',
   templateUrl: './side-bar.component.html',
-  styleUrls: ['./side-bar.component.css']
+  styleUrls: ['./side-bar.component.css'],
 })
 export class SideBarComponent implements OnInit {
-
   mainMenu: mainMenuInterface = {};
   customOptions: customOptionsInterface[] | [] = [];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.mainMenu = {
@@ -43,57 +42,57 @@ export class SideBarComponent implements OnInit {
         {
           name: 'Home',
           icon: 'uil uil-estate',
-          router: ['/', 'tracks']
+          router: ['/', 'tracks'],
         },
-        
+
         {
           name: 'Buscar',
           icon: 'uil uil-search',
-          router: ['/', 'history']
+          router: ['/', 'history'],
         },
 
         {
           name: 'Tu biblioteca',
           icon: 'uil uil-chart',
           router: ['/', 'favorites'],
-          query: { hola: 'mundo' }
-        }
+          query: { hola: 'mundo' },
+        },
       ],
 
       accessLink: [
         {
           name: 'Crear lista',
-          icon: 'uil-plus-square'
+          icon: 'uil-plus-square',
         },
 
         {
           name: 'Canciones que te gustan',
-          icon: 'uil-heart-medical'
-        }
-      ]
-    }
+          icon: 'uil-heart-medical',
+        },
+      ],
+    };
 
     this.customOptions = [
       {
         name: 'Mi lista º1',
-        router: ['/']
+        router: ['/'],
       },
 
       {
         name: 'Mi lista º2',
-        router: ['/']
+        router: ['/'],
       },
 
       {
         name: 'Mi lista º3',
-        router: ['/']
+        router: ['/'],
       },
 
       {
         name: 'Mi lista º4',
-        router: ['/']
-      }
-    ]
+        router: ['/'],
+      },
+    ];
   }
 
   goTo($event: any): void {
@@ -101,9 +100,9 @@ export class SideBarComponent implements OnInit {
       queryParams: {
         key1: 'value1',
         key2: 'value2',
-        key3: 'value3'
-      }
-    })
-    console.log($event)
+        key3: 'value3',
+      },
+    });
+    console.log($event);
   }
 }

@@ -7,31 +7,35 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     component: HomePageComponent,
   } */
 
-
 const routes: Routes = [
   {
     path: 'tracks',
-    loadChildren: () => import('@modules/tracks/tracks.module').then(m => m.TracksModule),
+    loadChildren: () =>
+      import('@modules/tracks/tracks.module').then((m) => m.TracksModule),
   },
 
   {
     path: 'favorites',
-    loadChildren: () => import('@modules/favorites/favorites.module').then(m => m.FavoritesModule),
+    loadChildren: () =>
+      import('@modules/favorites/favorites.module').then(
+        (m) => m.FavoritesModule
+      ),
   },
 
   {
     path: 'history',
-    loadChildren: () => import('@modules/history/history.module').then(m => m.HistoryModule),
+    loadChildren: () =>
+      import('@modules/history/history.module').then((m) => m.HistoryModule),
   },
 
   {
     path: '**', // 404
     redirectTo: 'tracks',
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

@@ -11,8 +11,6 @@ import { RouterModule } from '@angular/router';
 import { OrderlistPipe } from './pipe/orderlist.pipe';
 import { ImgBrokenDirective } from './directives/img-broken.directive';
 
-
-
 @NgModule({
   declarations: [
     SideBarComponent,
@@ -23,12 +21,9 @@ import { ImgBrokenDirective } from './directives/img-broken.directive';
     PlayListHeaderComponent,
     PlayListBodyComponent,
     OrderlistPipe,
-    ImgBrokenDirective
+    ImgBrokenDirective,
   ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
+  imports: [CommonModule, RouterModule],
   exports: [
     SideBarComponent,
     MediaPlayerComponent,
@@ -38,7 +33,7 @@ import { ImgBrokenDirective } from './directives/img-broken.directive';
     PlayListHeaderComponent,
     PlayListBodyComponent,
     OrderlistPipe,
-    ImgBrokenDirective
-  ]
+    ImgBrokenDirective,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
