@@ -6,29 +6,32 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-tracks-page',
   templateUrl: './tracks-page.component.html',
-  styleUrls: ['./tracks-page.component.css']
+  styleUrls: ['./tracks-page.component.css'],
 })
 export class TracksPageComponent implements OnInit, OnDestroy {
-  tracksRandom: TrackModel[] = []
-  tracksTrending: TrackModel[] = []
+  tracksRandom: TrackModel[] = [];
+  tracksTrending: TrackModel[] = [];
 
-  listObservers: Array<Subscription> = []
+  listObservers: Array<Subscription> = [];
 
-  constructor(private _trackService: TrackService) { }
+  constructor(private _trackService: TrackService) {}
 
   ngOnInit(): void {
-    this._trackService.getAllTracks$().subscribe(
-      (tracks: TrackModel[]) => {
-        this.tracksTrending = tracks
-      })
-      
-      this._trackService.getAllRandom$().subscribe(
-        (tracks: TrackModel[]) => {
-          this.tracksRandom = tracks
-        })
+    this.loadDataAll();
+    this.loadDataRandom();
   }
 
-  ngOnDestroy(): void {
-    
+  loadDataAll(): void {
+    this._trackService.getAllTracks$().subscribe((tracks: TrackModel[]) => {
+      this.tracksTrending = tracks;
+    });
   }
+
+  loadDataRandom(): void {
+    this._trackService.getAllRandom$().subscribe((tracks: TrackModel[]) => {
+      this.tracksRandom = tracks;
+    });
+  }
+
+  ngOnDestroy(): void {}
 }
